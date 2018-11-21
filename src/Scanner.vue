@@ -29,7 +29,7 @@ export default {
     },
     multiple: {
       type: Boolean,
-      default: true
+      default: false
     },
     singleChannel: {
       type: Boolean,
