@@ -87,7 +87,6 @@ export default {
       if (err) {
         return console.log(err);
       }
-      console.log("quagga init 2");
     });
     Quagga.onDetected(this.onDetected ? this.onDetected : this._onDetected);
     Quagga.onProcessed(this.onProcessed ? this.onProcessed : this._onProcessed);
@@ -98,16 +97,14 @@ export default {
         if (err) {
           return console.log(err);
         }
-        console.log("quagga restart 2");
+
         Quagga.start();
       });
     },
     start: function() {
-      console.log("start 2");
       Quagga.start();
     },
     stop: function() {
-      console.log("stop 2");
       Quagga.stop();
     },
     onstart: function() {
