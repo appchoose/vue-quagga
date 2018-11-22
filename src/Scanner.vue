@@ -87,12 +87,17 @@ export default {
       if (err) {
         return console.log(err);
       }
-      Quagga.start();
     });
     Quagga.onDetected(this.onDetected ? this.onDetected : this._onDetected);
     Quagga.onProcessed(this.onProcessed ? this.onProcessed : this._onProcessed);
   },
   methods: {
+    start: function() {
+      Quagga.stop();
+    },
+    stop: function() {
+      Quagga.stop();
+    },
     _onProcessed: function(result) {
       let drawingCtx = Quagga.canvas.ctx.overlay,
         drawingCanvas = Quagga.canvas.dom.overlay;
