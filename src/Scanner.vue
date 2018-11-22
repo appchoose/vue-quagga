@@ -87,6 +87,7 @@ export default {
       if (err) {
         return console.log(err);
       }
+      console.log("quagga init");
     });
     Quagga.onDetected(this.onDetected ? this.onDetected : this._onDetected);
     Quagga.onProcessed(this.onProcessed ? this.onProcessed : this._onProcessed);
@@ -97,6 +98,12 @@ export default {
     },
     stop: function() {
       Quagga.stop();
+    },
+    onstart: function() {
+      this.onStart(Quagga);
+    },
+    onstop: function() {
+      this.onStop(Quagga);
     },
     _onProcessed: function(result) {
       let drawingCtx = Quagga.canvas.ctx.overlay,
