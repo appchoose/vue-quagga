@@ -93,6 +93,15 @@ export default {
     Quagga.onProcessed(this.onProcessed ? this.onProcessed : this._onProcessed);
   },
   methods: {
+    restart: function() {
+      Quagga.init(this.quaggaState, function(err) {
+        if (err) {
+          return console.log(err);
+        }
+        console.log("quagga restart");
+        Quagga.start();
+      });
+    },
     start: function() {
       console.log("start");
       Quagga.start();
