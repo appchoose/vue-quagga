@@ -94,9 +94,11 @@ export default {
   },
   methods: {
     start: function() {
-      Quagga.stop();
+      console.log("start");
+      Quagga.start();
     },
     stop: function() {
+      console.log("stop");
       Quagga.stop();
     },
     onstart: function() {
